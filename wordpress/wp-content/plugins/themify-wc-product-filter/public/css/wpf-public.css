@@ -1,0 +1,602 @@
+/* Frontend CSS for  WooCommerce Product Filter plugin
+
+/************************************************************************************/
+.wpf_form * {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.wpf_form{
+    margin: 0 0 1em;
+}
+.wpf-search-container{
+    clear:both;
+    position:relative;
+}
+.wpf-container-wait,
+.wpf-search-submit{
+    opacity: .5;
+    cursor: wait;
+}
+.wpf-search-submit:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    z-index: 100;
+}
+.wpf-search-wait{
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 10px;
+    text-indent: -9999em;
+    border: 1.1em solid rgba(0,0,0, 0.2);
+    border-left: 1.1em solid #000000;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: wpf_loader 1.1s infinite linear;
+    animation: wpf_loader 1.1s infinite linear;
+    display:none;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    z-index: 99999;
+}
+.wpf-infnitiy-scroll.wpf-container-wait .wpf-search-wait{
+    top: auto;
+    bottom: 0;
+}
+@-webkit-keyframes wpf_loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes wpf_loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.wpf-container-wait .wpf-search-wait{
+	display:block;
+}
+.wpf_item .wpf_item_name{
+    font-weight: bold;
+    font-size: 1em;
+    display: block;
+    cursor: auto;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    margin: 0 0 .8em;
+    padding-bottom: .8em;
+    width: 100%;
+    position: relative;
+}
+.wpf_layout_vertical .wpf_item + .wpf_item .wpf_item_name {
+    margin-top: .8em; /* add margin after the first item */
+}
+.wpf_item_onsale input,
+.wpf_item_instock input{
+    margin:0;
+}
+.wpf_item{
+    padding: .8em 0;
+    position: relative;
+}
+.wpf_item.wpf_item_onsale,
+.wpf_item.wpf_item_instock {
+    padding: .3em 0;
+}
+.wpf_layout_vertical .wpf_item.wpf_item_onsale .wpf_item_name,
+.wpf_layout_vertical .wpf_item.wpf_item_instock .wpf_item_name{
+    display: inline-block;
+    margin: 0;
+    margin-right: 5px;
+    font-size: 1em;
+    font-weight: normal;
+    border: none;
+    width: auto;
+    padding: 0;
+    cursor: pointer;
+}
+.wpf_layout_vertical .wpf_item_onsale .wpf_items_group,
+.wpf_layout_vertical .wpf_item_instock .wpf_items_group,
+.wpf_layout_vertical .wpf_onsale_wrapp,
+.wpf_layout_vertical .wpf_instock_wrapp{
+    float: left;
+    margin-right: 5px;
+}
+.wpf_item.wpf_item_submit{
+    border: none;
+}
+.wpf_item label{
+    cursor: pointer;
+    vertical-align: middle;
+    line-height: normal;
+}
+.wpf_item input[type="checkbox"]{
+    border: 1px solid #b4b9be;
+    background: #fff;
+    color: #555;
+    clear: none;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
+    height: 20px;
+    margin: 0 4px 0 0;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    width: 20px;
+    -webkit-appearance: none;
+    -webkit-transition: .05s border-color ease-in-out;
+    transition: .05s border-color ease-in-out;
+    font-size: 16px;
+    font-family: 'themify';
+    outline: none;
+}
+.wpf_hide_text li>input:checked+label>i:after,
+.wpf_item input[type="checkbox"]:checked:before {
+    content: "\e64c";
+}
+.wpf_item input[type="text"]{
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #bdbdbd;
+    padding: .7em .5em;
+    margin: 0;
+    color: #5b6270;
+    outline: none;
+}
+.wpf_item ul {
+    margin: 0;
+    padding: 0;    
+}
+.wpf_item li {
+    margin: 0 0 .8em;
+    padding: 0;
+    list-style: none;
+}
+.wpf_item li .wpf_selected{
+    cursor: default;
+    color:#dc9814;
+}
+.wpf_item .wpf_color_icons li input{
+    display: none;
+}
+.wpf_item_count{
+    background: #e6e6e6;
+    border-radius: 50px;
+    padding: .5em .8em;
+    font-size: .65em;
+    line-height: 1.1em;
+    color: #5f5f5f;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -.1em;
+}
+.wpf_color_icons li label{
+    border: 1px solid transparent;
+    padding: .2em .8em;
+    color: #4e4e4f;
+    background: #d1d2d4;
+    margin-bottom: .8em;
+    position: relative;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    text-align: center;
+}
+.wpf_color_icons .wpf_item_count {
+	margin: -10px 0 0 -10px;
+	position: relative;
+	background: rgba(80,80,80,.85);
+	color: #fff;
+}
+.wpf_color_icons:not(.wpf_hide_text) li>input:checked+label{
+    opacity: .25;
+    -webkit-box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.35);
+    box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.35);
+}
+.wpf_hide_text li label{
+    padding: 4px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0;
+}
+.wpf_hide_text li i{
+    font-size: 16px;
+    font-family: 'themify';
+}
+.wpf_dropdown {
+    width: 100%;
+    margin-bottom: 30px;
+}
+.wpf_search_button{
+    background-color: #dcaa2e;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 0.8em;
+    -webkit-appearance: none;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    transition: all .3s linear;
+    outline: none;
+}
+.wpf_search_button:hover{
+    background-color: #000;
+}
+/*
+GRID & COLUMNS
+*************************************************************************************/
+
+.wpf_column_vertical li{
+    display: block;
+    margin-bottom: .8em;
+    
+}
+.wpf_column_1 li,
+.wpf_column_horizontal li{
+    display:  inline-block;
+    margin-right: .7em;
+}
+.wpf_column_1 li:last-child,
+.wpf_column_horizontal li:last-child{
+    margin-right: 0;
+}
+.wpf_column_columns li{
+    float: left;
+    clear: none;
+}
+.wpf_column_3  li{
+    padding-right: 3.2%;
+    width: 33.2%;    
+}
+.wpf_column_2  li{
+    width: 50%;
+    padding-right: 3.2%;    
+}
+
+/*
+DISPLAY AS LINKS
+*************************************************************************************/
+.wpf_pa_link input,
+.wpf_links input[type="checkbox"]{
+    display: none;
+}
+.wpf_pa_link input:checked+span{
+	cursor: default;
+    color:#dc9814;
+}
+.wpf_links a{
+	outline:none;
+}
+/*
+GROUP
+*************************************************************************************/
+.wpf_items_grouped .wpf_item:not(.wpf_item_instock):not(.wpf_item_onsale) .wpf_item_name:after{
+    content:"\e622";
+    font-family: 'themify';
+    position: absolute;
+    right: 0;
+    top: 16%;
+    cursor: pointer;
+    font-size: 16px;
+}
+.wpf_items_grouped .wpf_item:not(.wpf_item_instock):not(.wpf_item_onsale) .wpf_item_name.wpf_grouped_close:after{
+    content:"\e61a";
+}
+
+/*
+PRICE Tooltip 
+*************************************************************************************/
+.wpf-slider-tooltip {
+    position: absolute;
+    z-index: 10;
+    display: block;
+    padding: 5px 0;
+    font-size: 11px;
+    visibility: visible;
+    bottom: 8px;
+    left: -12px;
+}
+
+.wpf-slider-tooltip-arrow {
+    display: none;
+}
+.wpf-slider-tooltip-inner {
+    max-width: 200px;
+    padding: 3px 8px;
+    color: inherit;
+    text-align: center;
+    text-decoration: none;
+    background: none;
+    border-radius: 0;
+    outline: none;
+}
+
+.wpf_slider .ui-slider-handle.ui-state-focus{
+    outline: none;
+}
+.wpf_slider.ui-slider{
+    height: 2px;
+    background: rgba(0,0,0,.15);
+    border: none;
+    margin: 2.5em .0 .8em 0;
+}
+.wpf_slider.ui-slider .ui-widget-header{
+    background: #975dc3;
+    border: none;
+}
+.wpf_slider.ui-slider .ui-slider-handle{
+    border-radius: 50px;
+    top: -.4em;
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+    background:  #fff;
+}
+
+/*
+Hierachy Tree
+*************************************************************************************/
+.wpf_item .wpf_submenu {
+    border-left: 1px solid rgba(0,0,0,.1);
+    padding-left: 10px;
+    margin: 10px 0;
+}
+
+/*
+Hierachy Tree
+*************************************************************************************/
+.wpf_form:after,
+.wpf_item:after,
+.wpf_item ul:after,
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+/* UI
+================================================ */
+.wpf_autocomplete{
+    position: relative;
+}
+.ui-widget-content.wpf_ui_autocomplete .ui-state-focus{
+    background: #f3f3f4;
+    border: 1px solid rgba(0,0,0,.1);
+    outline: none;
+}
+.wpf_autocomplete .wpf-search-wait{
+    position: absolute;
+    right: 7px;
+    top: 30%;
+    left: auto;
+    font-size: 4px;
+    width: 20px;
+    height: 20px;
+}
+/* Horizontal Layouts
+================================================ */
+.wpf_layout_horizontal .wpf_item{
+    vertical-align: top;
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,.1);
+    padding: 0;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    background: #fff;
+}
+.wpf_layout_horizontal .wpf_item:last-child{
+    margin-right: 0;
+}
+.wpf_layout_horizontal .wpf_item:not(.wpf_item_onsale):not(.wpf_item_instock):not(.wpf_item_submit):after{
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    bottom: -2px;
+    left: 0;
+    height: 8px;
+    z-index: 101;
+    display: none;
+}
+.wpf_layout_horizontal .wpf_item.wpf_item_submit{
+    border: none;
+}
+.wpf_layout_horizontal .wpf_search_button{
+    padding: .6em 1em;
+    line-height: 1.25em;
+}
+.wpf_form .wpf_layout_horizontal.wpf_items_wrapper  .wpf_item .wpf_item_name:after{
+    content: "\e64b";
+    font-family: 'themify';
+    position: static;
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 1.1em;
+    cursor: default;
+    vertical-align: middle;
+}
+.wpf_form .wpf_layout_horizontal.wpf_items_wrapper  .wpf_item:hover .wpf_item_name:after{
+    content: "\e648";
+}
+.wpf_form .wpf_layout_horizontal.wpf_items_wrapper .wpf_item:not(.wpf_item_onsale):not(.wpf_item_instock):not(.wpf_item_submit):hover{
+    border-bottom: none;
+}
+.wpf_form .wpf_layout_horizontal.wpf_items_wrapper  .wpf_item:not(.wpf_item_submit):hover:after{
+    display: block;
+}
+.wpf_layout_horizontal .wpf_item_name{
+    font-size: 1em;
+    line-height: 1.2em;
+    font-weight: normal;
+    border: none;
+    margin: 0;
+    padding: .6em .8em;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+}
+.wpf_layout_horizontal .wpf_items_group{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    width: 100%;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.1);
+    padding: 1em 1.5em;
+    z-index: 1;
+}
+.wpf_layout_horizontal .wpf_items_group.wpf_right_tab{
+	left:auto;
+	right:-1px;
+}
+.wpf_layout_horizontal .wpf_item_price .wpf_items_group{
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+.wpf_layout_horizontal .wpf_item_onsale .wpf_item_name,
+.wpf_layout_horizontal .wpf_item_instock .wpf_item_name{
+    width: auto;
+    cursor: pointer;
+}
+.wpf_form .wpf_layout_horizontal.wpf_items_wrapper  .wpf_item.wpf_item_onsale .wpf_item_name:after,
+.wpf_form .wpf_layout_horizontal.wpf_items_wrapper  .wpf_item.wpf_item_instock .wpf_item_name:after{
+    content: '';
+    display: none;
+}
+.wpf_form .wpf_layout_horizontal.wpf_items_wrapper .wpf_item_onsale .wpf_items_group,
+.wpf_form .wpf_layout_horizontal.wpf_items_wrapper .wpf_item_instock .wpf_items_group{
+    padding: 0;
+    border: none;
+    display: inline-block;
+    vertical-align: middle;
+    width: auto !important;
+    position: static;
+    margin-right: 8px;
+}
+.wpf_price_format,
+.wpf_price_range input{
+    display: none;
+}
+.wpf_price_range li{
+    cursor: pointer;
+    display: block;
+}
+.wpf_price_range label:hover,
+.wpf_price_range input:checked+label{
+    color:#dc9814;
+}
+.wpf_price_range input:checked+label{
+    cursor: default;
+}
+.wpf_layout_horizontal .wpf_price_range li{
+    display: inline-block;
+    margin: 0 8px 0 0;
+}
+.wpf_layout_horizontal .wpf_price_range li:last-child{
+    margin: 0;
+}
+@media screen and (max-width:768px) {
+    .wpf_layout_horizontal .wpf_price_range li{
+         display:block;
+         margin: 0 0 .8em;
+    }
+}
+
+.wpf_form .select2-container li,
+.wpf_selectbox .select2-results__option{
+    margin: 0;
+    padding: 4px 6px;
+}
+.wpf_form .select2-container{
+    line-height: normal;
+}
+.wpf_form .select2-selection--multiple .select2-search{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.wpf_form .select2-selection--multiple li{
+    clear: none;
+}
+/*Infinity Scroll*/
+.wpf_infinity.wpf_infinity_auto{
+    display: none;
+}
+.wpf_infinity{
+    clear: both;
+    width: 100%;
+    text-align: center;
+}
+.wpf_infinity a{
+    color: #060604;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    padding: 0 1.5em;
+    font-size: 1em;
+    position: relative;
+    outline: none;
+}
+.wpf_infinity a:before{
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    font-size: 0.65em;
+    border: .4em solid rgba(0,0,0, 0.2);
+    border-left: .4em solid #000000;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: wpf_loader 1.1s infinite linear;
+    animation: wpf_loader 1.1s infinite linear;
+    position: absolute;
+    top: .5em;
+    right: -5px;
+    content: '';
+    display: none;
+}
+.wpf-container-wait .wpf_infinity a:before{
+    display: block;
+}
+@-webkit-keyframes wpf_loader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes wpf_loader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

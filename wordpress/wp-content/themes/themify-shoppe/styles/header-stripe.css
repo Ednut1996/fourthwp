@@ -1,0 +1,127 @@
+/* 
+HEADER STRIPE
+================================================ */
+/* headerwrap */
+#headerwrap {
+	text-align: inherit;
+	border: none;
+	padding-bottom: 10px;
+	padding-top: 40px;
+	background-color: transparent;
+}
+#header {
+	width: 1160px;
+	background-color: #fff;
+	max-width: 96%;
+	box-shadow: 0 0 5px rgba(0,0,0,.15);
+}
+.mobile_menu_active #header {
+	padding: 0 0 0 26px;
+}
+#headerwrap.fixed-header {
+	padding-bottom: 0;
+	padding-top: 0;
+}
+
+.admin-bar #headerwrap #menu-icon,
+.admin-bar.mobile-menu-visible #headerwrap #menu-icon,
+.admin-bar.mobile_menu_active #headerwrap #menu-icon {
+	top: 50%;
+}
+
+/* logo wrap */
+.logo-wrap {
+	float: left;
+}
+
+/* site description */
+#site-description {
+	left: 0;
+	-webkit-transform: none;
+	-moz-transform: none;
+	transform: none;
+	text-align: left;
+}
+#site-description:before {
+	left: 0;
+	margin-left: 14px;
+}
+
+/* main navigation */
+#main-nav {
+	position: static;
+	float: left;
+	width: auto;
+	max-width: none;
+	padding-left: 23px;
+}
+
+/* menu-icon */
+#headerwrap #menu-icon {
+	position: absolute;
+	top: 50%;
+	right: 26px;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+/* MOBILE MENU ACTIVE */
+/* header */
+.mobile_menu_active #header {
+	width: auto;
+	max-width: 100%;
+}
+
+/* site logo */
+.mobile_menu_active #site-logo {
+	font-size: 1.7em;
+}
+
+/* slide menu icon close */
+.mobile_menu_active #menu-icon-close {
+	display: block;
+	position: absolute;
+	text-decoration: none;
+	top: 1em;
+	right: 1em;
+	min-width: 2em;
+	min-height: 2em;
+	transform-origin: center;
+	transition: all .3s linear;
+	transition-property: transform;
+}
+.mobile_menu_active #menu-icon-close:before,
+.mobile_menu_active #menu-icon-close:after {
+	content: '';
+	display: block;
+	border-top: 1px solid;
+	position: absolute;
+	left: 0;
+	top: 60%;
+	width: 100%;
+}
+.mobile_menu_active #menu-icon-close:before {
+	-webkit-transform: rotateZ(-45deg);
+	-moz-transform: rotateZ(-45deg);
+	transform: rotateZ(-45deg);
+}
+.mobile_menu_active #menu-icon-close:after {
+	-webkit-transform: rotateZ(45deg);
+	-moz-transform: rotateZ(45deg);
+	transform: rotateZ(45deg);
+}
+.mobile_menu_active.mobile-menu-visible #headerwrap #menu-icon-close:hover {
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+.mobile_menu_active.mobile-menu-visible #headerwrap #menu-icon {
+	display: none;
+}
+
+@media screen and (max-width: 760px) {
+	#headerwrap #header {
+	padding-left: 20px;
+	}
+}

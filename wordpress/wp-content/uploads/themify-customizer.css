@@ -1,0 +1,27 @@
+/* Themify Customize Styling */
+h1, .col4-1 h1, .col4-2 h1, .col3-1 h1, .col2-1 h1, .page-title, .sidebar-none .page-title {	
+	font-family:Libre Franklin;	font-weight:bold;
+	font-size:95px;
+ 
+}
+#site-logo {		font-weight:600;
+	position:relative;
+
+	top: 3px; 
+}
+#site-logo img {	
+	height: 64px; 
+}
+@media screen and (max-width: 976px) { /* Themify Customize Styling */
+#site-logo img {	
+	height: 64px; 
+}
+ }@media screen and (max-width: 768px) { /* Themify Customize Styling */
+#site-logo img {	
+	height: 64px; 
+}
+ }@media screen and (max-width: 680px) { /* Themify Customize Styling */
+#site-logo img {	
+	height: 64px; 
+}
+ }
